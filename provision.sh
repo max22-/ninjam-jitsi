@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# Générer le mot de passe crypté à l'aide de cette commande :
-# mkpasswd -sha256
 useradd ninjam
 apt update
 apt install git -y
