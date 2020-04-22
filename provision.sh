@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export DEBIAN_FRONTEND=noninteractive
+
 useradd ninjam
 apt update
 apt install git -y
@@ -20,7 +22,7 @@ apt install pulseaudio -y
 
 # Jackd
 echo "Installation de Jackd"
-DEBIAN_FRONTEND=noninteractive apt install jackd pulseaudio-module-jack -yq
+apt install jackd pulseaudio-module-jack -yq
 
 # Client faisant le lien entre ninjam et jack
 apt install libncurses-dev libasound2-dev libjack-dev libvorbis-dev -y
