@@ -5,7 +5,7 @@ After=network.target multi-user.target
 [Service]
 Type=simple
 User=ninjam
-ExecStart=ninjamsrv /home/ninjam/ninjam.cfg
+ExecStart=ninjamsrv /etc/ninjam/ninjam.cfg
 Restart=always
 RestartSec=1
 
