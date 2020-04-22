@@ -13,3 +13,16 @@ cp /vagrant/ninjam.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable ninjam
 sudo systemctl start ninjam
+
+# PulseAudio
+echo "Installation de PulseAudio"
+sudo apt install pulseaudio -y
+
+# Jackd
+echo "Installation de Jackd"
+DEBIAN_FRONTEND=noninteractive apt install jackd pulseaudio-module-jack -yq
+
+# Client faisant le lien entre ninjam et jack
+#sudo apt install libncurses-dev libasound2-dev libjack-dev libvorbis-dev -y
+#make -C ninjam/ninjam/cursesclient
+#cp ninjam/ninjam/cursesclient/cninjam /usr/local/bin
