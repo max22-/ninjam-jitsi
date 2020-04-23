@@ -1,0 +1,12 @@
+[Unit]
+Description=Jackd service
+After=sound.target
+
+[Service]
+LimitRTPRIO=infinity
+LimitMEMLOCK=infinity
+User=ninjam
+ExecStart=jackd -Rd alsa -d hw:0 -r 48000 -p 1024 -n 2
+
+[Install]
+WantedBy=multi-user.target

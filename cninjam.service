@@ -3,11 +3,11 @@ Description=Ninjam/Jack Link Service
 After=network.target multi-user.target
 
 [Service]
-Type=simple
+Type=oneshot
+RemainAfterExit=yes
 User=ninjam
-ExecStart=cninjam localhost -jack -user anonymous:cninjam
-Restart=always
-RestartSec=1
+ExecStart=/usr/bin/tmux -2 -u new-session -d -c /home/ninjam -s cninjam /home/ninjam/cninjam.sh
+ExecStop=/usr/bin/tmux kill-session -t cninjam
 
 [Install]
 WantedBy=multi-user.target
